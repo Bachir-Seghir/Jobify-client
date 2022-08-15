@@ -65,7 +65,7 @@ function Pricing() {
                   </div>
                   <div className="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-white space-y-6 sm:p-10 sm:pt-6">
                     <ul role="list" className="space-y-4">
-                      {tier.features.slice(0, 2).map((feature) => (
+                      {tier?.features?.slice(0, 2).map((feature) => (
                         <li key={feature} className="flex items-start">
                           <div className="flex-shrink-0">
                             <CheckIcon
