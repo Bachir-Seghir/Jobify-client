@@ -7,7 +7,7 @@ import axios from "axios";
 import { API_URL } from "../utils/urls";
 import SuccessFeedback from "../components/SuccessFeedback";
 import SelectList from "./SelectList";
-import { levels, places, types } from "../utils/seedData";
+import { levels, places, types, connects } from "../utils/seedData";
 import { Link } from "react-router-dom";
 
 function classNames(...classes) {
@@ -175,7 +175,7 @@ const AddJob = () => {
 
                 {/* Type & Experience Level */}
 
-                <div className="col-span-6 sm:col-span-4">
+                <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="type"
                     className="block text-sm font-medium text-gray-700"
@@ -190,7 +190,7 @@ const AddJob = () => {
                     }
                   />
                 </div>
-                <div className="col-span-6 sm:col-span-4">
+                <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="level"
                     className="block text-sm font-medium text-gray-700"
@@ -204,6 +204,25 @@ const AddJob = () => {
                       setInputs((state) => ({
                         ...state,
                         experienceLevel: value,
+                      }))
+                    }
+                  />
+                </div>
+
+                <div className="col-span-6 sm:col-span-3">
+                  <label
+                    htmlFor="connects"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    connects
+                  </label>
+
+                  <SelectList
+                    data={connects}
+                    onChange={(value) =>
+                      setInputs((state) => ({
+                        ...state,
+                        connects: value,
                       }))
                     }
                   />

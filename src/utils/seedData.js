@@ -20,3 +20,10 @@ export const places = [
   { id: 2, name: "On Site", value: "onSite" },
   { id: 3, name: "Both", value: "both" },
 ];
+
+export const connects = [
+  { id: 1, name: "3", value: 3 },
+  { id: 2, name: "6", value: 6 },
+  { id: 3, name: "12", value: 12 },
+  { id: 3, name: "20", value: 20 },
+];

@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import PageNotFound from "./components/PageNotFound";
+import Blog from "./pages/Blog";
 import CompaniesPage from "./pages/CompaniesPage";
 import Condidate from "./pages/Condidate";
 import CondidatesPage from "./pages/CondidatesPage";
@@ -51,6 +52,7 @@ const App = () => {
         <Route path="/order" element={<OrderPage />} />
         <Route path="/user/:username" element={<ProfilePage />} />
         <Route path="/*" element={<PageNotFound />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
       {location.pathname !== "/signin" &&
         location.pathname !== "/register" &&

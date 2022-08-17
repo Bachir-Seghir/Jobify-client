@@ -7,7 +7,7 @@ import { API_URL } from "../utils/urls";
 import { ChevronRightIcon, EyeIcon } from "@heroicons/react/solid";
 import SuccessFeedback from "./SuccessFeedback";
 import { Link } from "react-router-dom";
-import { levels, places, types } from "../utils/seedData";
+import { levels, places, types, connects } from "../utils/seedData";
 import SelectList from "./SelectList";
 
 const MyJobs = () => {
@@ -268,7 +268,7 @@ const MyJobs = () => {
 
                 {/* Type & Experience Level */}
 
-                <div className="col-span-6 sm:col-span-4">
+                <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="type"
                     className="block text-sm font-medium text-gray-700"
@@ -284,7 +284,7 @@ const MyJobs = () => {
                     }
                   />
                 </div>
-                <div className="col-span-6 sm:col-span-4">
+                <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="level"
                     className="block text-sm font-medium text-gray-700"
@@ -304,6 +304,25 @@ const MyJobs = () => {
                   />
                 </div>
 
+                <div className="col-span-6 sm:col-span-3">
+                  <label
+                    htmlFor="connects"
+                    className="block text-sm font-medium text-gray-700"
+                  >
+                    connects
+                  </label>
+
+                  <SelectList
+                    data={connects}
+                    value={selectedJob?.connects}
+                    onChange={(value) =>
+                      setSelectedJob((state) => ({
+                        ...state,
+                        connects: value,
+                      }))
+                    }
+                  />
+                </div>
                 {/* Salary Entries */}
 
                 <div className="col-span-3 sm:col-span-2">
