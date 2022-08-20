@@ -1,4 +1,5 @@
 import BlogFeed from "../components/BlogFeed";
+import BlogSection from "../components/BlogSection";
 import Faqs from "../components/Faqs";
 import Hero from "../components/Hero";
 import Pricing from "../components/Pricing";
@@ -25,7 +26,7 @@ const Home = () => {
               Fresh job related news content posted each day
             </p>
           </div>
-          <BlogFeed limit />
+          <BlogSection />
         </div>
       </div>
 

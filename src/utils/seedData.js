@@ -4,6 +4,20 @@ export const types = [
   { id: 3, name: "Contract", value: "contract" },
 ];
 
+export const topics = [
+  { id: 1, name: "All Topics", value: "all" },
+  { id: 2, name: "Technology", value: "Technology" },
+  { id: 3, name: "Recruitment Strategy", value: "Recruitment_Strategy" },
+  { id: 4, name: "Employer Branding", value: "Employer_Branding" },
+  { id: 5, name: "Marketing", value: "Marketing" },
+  { id: 6, name: "Web Development", value: "Web_Development" },
+  { id: 7, name: "Soft Skills", value: "Soft_Skills" },
+  { id: 8, name: "Case Study", value: "Case_Study" },
+  { id: 9, name: "Budget", value: "Budget" },
+  { id: 10, name: "Programmatic", value: "Programmatic" },
+  { id: 11, name: "Trends", value: "Trends" },
+];
+
 export const levels = [
   { id: 1, name: "Entry", value: "entry" },
   { id: 2, name: "Mid", value: "mid" },
