@@ -21,11 +21,12 @@ In the project directory install all dependencies,run:
 
 ### `npm install`
 
-In the project directory, start the server : 
-
-### Configure Environment Variables 
+## Configure Environment Variables 
 
 open .env file and put your own variables 
+
+
+In the project directory, start the server : 
 
 ### `npm start`
 
