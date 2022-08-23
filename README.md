@@ -11,9 +11,9 @@ Jobify App is consisted to host two types of subscribers , Condidates & Employer
 condidates can register for free , and there is a pricing plans for Employers
 
 
-## Installaiom
+## Installation
 
-First of all, clone the repository into your machine :
+Clone the repository into your machine :
 
 ### `git clone https://github.com/Bachir-Seghir/Jobify.git`
 
@@ -43,10 +43,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 You can deploy the app on Netlify or Heroku. 
 
-### Contributions : 
+### Comming features : 
 
-* We are working for other features such as employer profile and employer Archive, User Profile page , contact page and Blog Page.
-
-* The Backend is on progress , looking forward to create it with Node.js or a Headless CMS such as Strapi soon. 
+* The Backend is created with [strapi.io](https://strapi.io), looking forward to create a backend from scratch with Node.js
 
 * Looking up to migrate from React Js to Next Js soon.
