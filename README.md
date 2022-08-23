@@ -23,6 +23,10 @@ In the project directory install all dependencies,run:
 
 In the project directory, start the server : 
 
+### Configure Environment Variables 
+
+open .env file and put your own variables 
+
 ### `npm start`
 
 Runs the app in the development mode.\
