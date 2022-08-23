@@ -1,4 +1,4 @@
-# Jobify App - Frontend Part
+# Jobify WEB 2.0 Application - Frontend Part
 
 Jobify app is created with [Create React App](https://github.com/facebook/create-react-app).
 and it is a job board inspired from many websites such as linkedIn , RemoteOk...etc 
@@ -15,7 +15,7 @@ condidates can register for free , and there is a pricing plans for Employers
 
 Clone the repository into your machine :
 
-### `git clone https://github.com/Bachir-Seghir/Jobify.git`
+### `git clone https://github.com/Bachir-Seghir/Jobify-client.git`
 
 In the project directory install all dependencies,run:
 
