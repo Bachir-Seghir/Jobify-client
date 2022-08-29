@@ -80,7 +80,9 @@ function SearchResult() {
     const fetchPosts = async () => {
       setLoading(true);
       axios
-        .get(`${API_URL}/jobs?title_contains&description_contains=${state}`)
+        .get(
+          `${API_URL}/jobs?title_contains=${state}&description_contains=${state}`
+        )
         .then((res) => {
           setPosts(res.data.reverse());
           setPageCount(Math.ceil(res.data.length / perPage));
