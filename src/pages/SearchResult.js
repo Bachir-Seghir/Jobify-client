@@ -17,6 +17,7 @@ import { UserContext } from "../contexts/userContext";
 import SuccessFeedback from "../components/SuccessFeedback";
 import { LightningBoltIcon } from "@heroicons/react/outline";
 import { Link, useLocation } from "react-router-dom";
+import qs from "qs";
 
 const borderColor = (type) => {
   switch (type) {
@@ -77,17 +78,18 @@ function SearchResult() {
   }, [currentPage, perPage]);
 
   useEffect(() => {
+    const query = qs.stringify({
+      _where: {
+        _or: [{ title_contains: state }, { description_contains: state }],
+      },
+    });
     const fetchPosts = async () => {
       setLoading(true);
-      axios
-        .get(
-          `${API_URL}/jobs?title_contains=${state}&description_contains=${state}`
-        )
-        .then((res) => {
-          setPosts(res.data.reverse());
-          setPageCount(Math.ceil(res.data.length / perPage));
-          setLoading(false);
-        });
+      axios.get(`${API_URL}/jobs?${query}`).then((res) => {
+        setPosts(res.data.reverse());
+        setPageCount(Math.ceil(res.data.length / perPage));
+        setLoading(false);
+      });
     };
     state && fetchPosts();
   }, [state, perPage]);
