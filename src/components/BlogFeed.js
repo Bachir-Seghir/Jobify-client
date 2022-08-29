@@ -6,15 +6,16 @@ import Pagination from "./Pagination";
 
 export default function BlogFeed({ topic, searchText }) {
   const [articles, setArticles] = useState([]);
-  const perPage = 6;
+
+  const perPage = process.env.REACT_APP_PERPAGE;
   const [currentPage, setCurrentPage] = useState(1);
   const [skip, setSkip] = useState(0);
-  const [pageCount, setPageCount] = useState(2);
+  const [pageCount, setPageCount] = useState(0);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     setSkip(currentPage * perPage - perPage);
-  }, [currentPage]);
+  }, [currentPage, perPage]);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -24,6 +25,7 @@ export default function BlogFeed({ topic, searchText }) {
           .get(`${API_URL}/articles?title_contains=${searchText}`)
           .then((res) => {
             setArticles(res.data);
+            setPageCount(Math.ceil(res.data.length / perPage));
             setLoading(false);
           });
       } else {
@@ -35,6 +37,7 @@ export default function BlogFeed({ topic, searchText }) {
           )
           .then((res) => {
             setArticles(res.data);
+            setPageCount(Math.ceil(res.data.length / perPage));
             setLoading(false);
           });
       }

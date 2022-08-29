@@ -74,19 +74,21 @@ function SearchResult() {
 
   useEffect(() => {
     setSkip(currentPage * perPage - perPage);
-  }, [currentPage]);
+  }, [currentPage, perPage]);
 
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      axios.get(`${API_URL}/jobs?title_contains=${state}`).then((res) => {
-        setPosts(res.data.reverse());
-        setPageCount(Math.ceil(res.data.length / perPage));
-        setLoading(false);
-      });
+      axios
+        .get(`${API_URL}/jobs?title_contains&description_contains=${state}`)
+        .then((res) => {
+          setPosts(res.data.reverse());
+          setPageCount(Math.ceil(res.data.length / perPage));
+          setLoading(false);
+        });
     };
     state && fetchPosts();
-  }, [state]);
+  }, [state, perPage]);
 
   useEffect(() => {
     setFeaturedPos(posts.filter((item) => item.featured).reverse());
@@ -214,7 +216,7 @@ function SearchResult() {
           </h3>
 
           <div className="bg-white border border overflow-hidden rounded-md">
-            <ul role="list" className="divide-y divide-gray-200">
+            <ul className="divide-y divide-gray-200">
               {posts.slice(skip, skip + perPage).map((post) => (
                 <li key={post.id}>
                   <div

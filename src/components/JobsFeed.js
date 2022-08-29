@@ -175,7 +175,7 @@ function JobsFeed() {
         {feedback.message}
       </SuccessFeedback>
       {user?.accountType === "condidate" && (
-        <div className="order-1 col-span-2 pb-2 flex items-center">
+        <div className="order-1 col-span-1 lg:col-span-3 pb-2 flex items-center">
           <h5 className="text-sm text-gray-900">
             Connects : <strong>{user?.connects}</strong>
           </h5>
@@ -185,7 +185,7 @@ function JobsFeed() {
         </div>
       )}
 
-      <div className="order-2 lg:order-1 lg:col-span-2 flex flex-col py-6">
+      <div className="order-3 lg:order-2 col-span-1 lg:col-span-2 flex flex-col py-6">
         <h3 className="text-2xl font-medium text-gray-900 text-left pb-8">
           Recent Jobs
         </h3>
@@ -266,7 +266,7 @@ function JobsFeed() {
           pageCount={pageCount}
         />
       </div>
-      <div className="order-1 lg:order-2 py-6 overflow-hidden relative">
+      <div className="order-2 lg:order-3 col-span-1 py-6 overflow-hidden relative">
         <div className="flex justify-between pb-8">
           <h3 className="text-2xl font-medium text-gray-900 text-left ">
             Featured Jobs

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useHistory, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { RadioGroup } from "@headlessui/react";
 import { CheckCircleIcon } from "@heroicons/react/solid";
 import { UserContext } from "../contexts/userContext";
@@ -42,7 +42,7 @@ function RegisterPage() {
   const [password, setPassword] = useState("");
 
   const [loading, setLoading] = useState(false);
-  const [loginError, setLoginError] = useState(null);
+  const [registerError, setRegisterError] = useState(null);
 
   const navigate = useNavigate();
   // Context API
@@ -73,7 +73,7 @@ function RegisterPage() {
             });
       })
       .catch((err) => {
-        setLoginError(err);
+        setRegisterError(err);
         setLoading(false);
       });
   };
@@ -85,7 +85,7 @@ function RegisterPage() {
     ) {
       navigate("/");
     }
-  }, [user]);
+  }, [user, navigate]);
 
   //loading spinner
   if (loading)
@@ -131,6 +131,9 @@ function RegisterPage() {
               <h2 className="mt-6 text-3xl font-extrabold text-slate-700">
                 Sign Up
               </h2>
+              {registerError && (
+                <h4 className="text-red-500 mt-4">{registerError}</h4>
+              )}
             </div>
 
             <RadioGroup value={selectedMode} onChange={setSelectedMode}>

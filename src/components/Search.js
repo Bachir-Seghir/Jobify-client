@@ -1,7 +1,5 @@
-import React, { Fragment, useState } from "react";
-import { Listbox, Transition } from "@headlessui/react";
-import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
-import { ArrowCircleRightIcon } from "@heroicons/react/outline";
+import React, { useState } from "react";
+
 import { useNavigate } from "react-router-dom";
 
 function Search() {
@@ -9,9 +7,7 @@ function Search() {
   const [searchText, setSearchText] = useState("");
 
   const handleSearch = (e) => {
-    if (e.key !== "Enter") {
-      return;
-    }
+    e.preventDefault();
     navigate("search", { state: searchText });
   };
   return (
@@ -21,7 +17,9 @@ function Search() {
           type="text"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          onKeyUp={(e) => handleSearch(e)}
+          onKeyUp={(e) => {
+            e.key === "Enter" && handleSearch(e);
+          }}
           name="keyword"
           id="keyword"
           className="shadow-sm text-md font-medium px-4 py-3 focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-sm"
@@ -30,7 +28,7 @@ function Search() {
       </div>
 
       <button
-        onClick={handleSearch}
+        onClick={(e) => handleSearch(e)}
         className="items-center text-md font-medium px-4 py-3 border border-transparent leading-4 rounded-sm text-sky-900 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 lg:w-[100px]"
       >
         Search

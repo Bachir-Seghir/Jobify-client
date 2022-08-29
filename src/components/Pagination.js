@@ -15,7 +15,7 @@ function Pagination({ currentPage, setCurrentPage, pageCount }) {
   };
 
   return (
-    <nav className="w-1/2 mx-auto px-4 mt-8 flex items-center justify-between sm:px-0">
+    <nav className="w-full lg:w-1/2 mx-auto px-4 mt-8 flex items-center justify-between sm:px-0">
       <div className="-mt-px w-0 flex-1 flex">
         <span
           onClick={(e) => handleClick(e, "prev")}
@@ -28,7 +28,7 @@ function Pagination({ currentPage, setCurrentPage, pageCount }) {
           Previous
         </span>
       </div>
-      <div className="hidden md:-mt-px md:flex">
+      <div className="-mt-px flex">
         {Array(pageCount)
           .fill()
           .map((_, i) => (

@@ -51,17 +51,10 @@ export default function Navbar() {
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-between">
-                <div className="flex-shrink-0 flex items-center">
+                <div className="hidden md:flex flex-shrink-0 items-center">
                   <Link to="/">
                     <img
-                      className="block lg:hidden h-8 w-auto"
-                      src="https://drive.google.com/uc?export=view&id=1UsbTcP9u-KK7lJYDjSD3HgcuWiP5laLF"
-                      alt="Jobify Logo"
-                    />
-                  </Link>
-                  <Link to="/">
-                    <img
-                      className="hidden lg:block h-10 w-auto"
+                      className="h-10 w-auto"
                       src="https://drive.google.com/uc?export=view&id=1UsbTcP9u-KK7lJYDjSD3HgcuWiP5laLF"
                       alt="Jobify Logo"
                     />

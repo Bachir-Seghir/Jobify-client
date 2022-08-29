@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { format } from "date-fns";
+import { Link, useLocation } from "react-router-dom";
 import PageNotFound from "../components/PageNotFound";
 import { UserContext } from "../contexts/userContext";
 import { API_URL } from "../utils/urls";
@@ -13,7 +12,6 @@ function Success() {
   const session_id = new URLSearchParams(search).get("session_id");
   const [loading, setLoading] = useState(false);
   const { user, jwt } = useContext(UserContext);
-  const navigate = useNavigate();
 
   const updateMeSubscribe = async () => {
     axios.put(
